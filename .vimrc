@@ -132,6 +132,8 @@
      " Wrapped lines goes down/up to next row, rather than next line in file.
     noremap j gj
     noremap k gk
+
+    nnoremap <C-n> :NERDTreeToggle<CR>
 " }
 
 " Plugins {
@@ -164,7 +166,6 @@
     autocmd VimEnter *
                 \   if !argc()
                 \ |   Startify
-                \ |   NERDTree
                 \ |   wincmd w
                 \ | endif
     let g:startify_custom_header_quotes =
