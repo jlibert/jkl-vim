@@ -137,6 +137,33 @@
 " }
 
 " Plugins {
+
+    "NERDTree {
+        "automatically close if nerd tree is the only one left
+        autocmd bufenter * if (winnr("$") == 1 &&
+                    \ exists("b:NERDTreeType") &&
+                    \ b:NERDTreeType == "primary") | q | endif
+
+        let NERDTreeQuitOnOpen = 1
+        let NERDTreeAutoDeleteBuffer = 1
+       " let NERDTreeMinimalUI = 1
+       let NERDTreeDirArrows = 1
+       let g:NERDTreeShowGitStatus = 1
+
+       let g:NERDTreeIndicatorMapCustom = {
+            \ "Modified"  : "M",
+            \ "Staged"    : "S",
+            \ "Untracked" : "U",
+            \ "Renamed"   : "R",
+            \ "Unmerged"  : "=",
+            \ "Deleted"   : "D",
+            \ "Dirty"     : "!",
+            \ "Clean"     : "C",
+            \ 'Ignored'   : 'I',
+            \ "Unknown"   : "?"
+            \ }
+    " }
+
     " Omnisharp{
 
     " }
@@ -145,7 +172,7 @@
         if isdirectory(expand("~/.vim/bundle/vim-airline-themes/"))
             let g:airline_theme = 'solarized'
         endif
-    "}
+    " }
 
     " fugitive {
         if isdirectory(expand("~/.vim/bundle/vim-fugitive/"))
@@ -160,9 +187,9 @@
             nnoremap <silent> <leader>ge :Gedit<CR>
             nnoremap <silent> <leader>ga :Git add %<CR>
         endif
-   "}
+   " }
 
-"vim-startify{
+    "vim-startify{
     autocmd VimEnter *
                 \   if !argc()
                 \ |   Startify
@@ -174,7 +201,7 @@
                 \ ['Unfortunately, no one can be… told what the Matrix is.', 'You have to see it for yourself.', '', '- Morpheus']
                 \ ]
 
-    "}
+    " }
 
     "YouCompleteMe {
 
@@ -213,8 +240,29 @@
             " especially when splits are used.
             set completeopt-=preview
         endif
-    "}
-"}
+    " }
+
+    "Tabularize {
+        if isdirectory(expand("~/.vim/bundle/tabular"))
+            nmap <Leader>a& :Tabularize /&<CR>
+            vmap <Leader>a& :Tabularize /&<CR>
+            nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+            vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+            nmap <Leader>a=> :Tabularize /=><CR>
+            vmap <Leader>a=> :Tabularize /=><CR>
+            nmap <Leader>a: :Tabularize /:<CR>
+            vmap <Leader>a: :Tabularize /:<CR>
+            nmap <Leader>a:: :Tabularize /:\zs<CR>
+            vmap <Leader>a:: :Tabularize /:\zs<CR>
+            nmap <Leader>a, :Tabularize /,<CR>
+            vmap <Leader>a, :Tabularize /,<CR>
+            nmap <Leader>a,, :Tabularize /,\zs<CR>
+            vmap <Leader>a,, :Tabularize /,\zs<CR>
+            nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+            vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+        endif
+    " }
+" }
 
 " GUI Settings {
 

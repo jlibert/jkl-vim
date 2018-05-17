@@ -34,6 +34,7 @@
 
     " General {
         Bundle 'scrooloose/nerdtree'
+        Bundle 'Xuyuanp/nerdtree-git-plugin'
         Bundle 'altercation/vim-colors-solarized'
         Bundle 'spf13/vim-colors'
         Bundle 'vim-airline/vim-airline'
@@ -51,6 +52,7 @@
 
     " General Programming {
         Bundle 'tpope/vim-fugitive'
+        Bundle 'godlygeek/tabular'
     " }
 
 " Snippets & AutoComplete {
